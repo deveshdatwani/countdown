@@ -1,5 +1,53 @@
-<html>
-<p align="center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZYF75i2xROU?si=J_SAm00QR7U-mGej&amp;start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting the love of my life within</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin-top: 25%;
+        }
+        #countdown {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Meeting the love of my life within</h1>
+    <div id="countdown"></div>
+
+    <script>
+        // Set the date we're counting down to
+        const countDownDate = new Date('January 31, 2024 00:00:00').getTime();
+
+        // Update the countdown every 1 second
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            // Calculate days, hours, minutes, and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the countdown
+            document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            // If the countdown is over, display a message
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById('countdown').innerHTML = 'EXPIRED';
+            }
+        }, 1000);
+    </script>
+
+</body>
 </html>
+
